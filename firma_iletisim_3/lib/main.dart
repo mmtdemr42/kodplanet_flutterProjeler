@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp( BenimUyg());
+  runApp( const BenimUyg());
 }
 
 class BenimUyg extends StatelessWidget {
@@ -15,70 +16,90 @@ class BenimUyg extends StatelessWidget {
       home: Scaffold(
         backgroundColor: Colors.brown,
         body: SafeArea(
-          child: Padding(
-            padding: const EdgeInsets.all(100.0),
+          child: Center(
             child: Column(
+              mainAxisSize: MainAxisSize.min, // Column düşeyde komple yer kaplamak ister bunu engellemek için de bu şekilde kullanabiliriz.
+              ///crossAxisAlignment: CrossAxisAlignment.stretch, Cross=> ikincil demek, columda ikicil yatay dmeektir. strech'de yatay boyunca genile anlamaına gelir
+              mainAxisAlignment: MainAxisAlignment.center, //yerini ayarlamak amacıyla kullanılır.
               children: [
-               // ignore: prefer_const_constructors
-               Padding(
-                 padding: const EdgeInsets.all(8.0),
-                 child: const CircleAvatar(
-                   radius: 100,
-                   backgroundImage: AssetImage("images/kahve.jpg"),
-                 ),
-                 
+               const CircleAvatar(
+                 radius: 100, // DAirenin büyüklüğü verilir.
+                 backgroundImage: AssetImage("images/kahve.jpg"),
                ),
                const SizedBox(
                  height: 25,
                ),
                const Text("Flutter Kahvecisi",
                style: TextStyle(
-                 
+                 fontFamily: "Satisfy", //Font eklemek için google fontsa git => font dosyasını indir => pubspec.yaml dosyasında font yerine yerleştir.
+                 fontSize: 45,
+                 color: Color(0xff3e2723),
+                  
                ),),
                const SizedBox(
-                 height: 25,
+                 height: 5,
                ),
-               const Text("Bir Fincan Uzağınızda"),
+                Text("Bir Fincan Uzağınızda",
+               style: GoogleFonts.pacifico(
+               textStyle: const TextStyle(
+                 color: Colors.white,
+                 fontSize: 16,
+               ),
+               ),
+               ),
+               Container(
+                 width: 200,
+                 child: const Divider(
+                   height: 30,
+                   thickness: 10,
+                   color: Colors.black,
+                 ),
+               ),
                /* Transform(//Tranform kullanılarak yapılıotr.
-                 transform: Matrix4.rotationZ(-0.2),
-                 alignment: FractionalOffset.center,
+                 transform: Matrix4.rotationZ(-0.2), // almak zorundadır.
+                 alignment: FractionalOffset.center, // konumlandırmaısnın neye göre yapılacağını ifade eder.döndürme yönü gibi.
                  child: const Text("Bir Fincan Uzağınızda")), */
                const SizedBox(
                  height: 25,
                ),
-               Container(
-                 width: 300,
-                 height: 50,
+               Card( 
+                 margin: EdgeInsets.symmetric(horizontal: 45),              
                  color: Colors.brown.shade100,
                  child: const Padding(
                    padding: EdgeInsets.all(8.0),
-                   child: TextField(
-                     decoration: InputDecoration(
-                       border: OutlineInputBorder(),
-                     ),
+                   child: ListTile(
+                     leading: Icon(Icons.email,size: 25,color: Colors.black,),
+                    title: Text("mmt.demr42@gmail.com",style: TextStyle(color: Colors.black),),
+
                    ),
                  ),
                ),
                const SizedBox(
                  height: 15,
                ),
-               Container(
-                 width: 300,
-                 height: 50,
+               Card(
+                 margin: EdgeInsets.symmetric(horizontal: 45),
                  color: Colors.brown.shade100,
                  child: const Padding(
                    padding: EdgeInsets.all(8.0),
-                   child: TextField(
-                     decoration: InputDecoration(
-                       border: OutlineInputBorder(
-                       )
-                     ),
+                   child: ListTile(
+                     leading: Icon(Icons.call,size: 25,color: Colors.black,),
+                     title: Text("5(...) ... .. ..",style: TextStyle(color: Colors.black),),
                    ),
                  ),
                ),
-               TextButton(onPressed: () {
-                 
-               }, child: const Text("Sipariş ver", ))
+              
+               Padding(
+                 padding: const EdgeInsets.only(top: 15),
+                 child: TextButton(onPressed: () {
+                   
+                 }, child:  Text("Sipariş ver",style: GoogleFonts.adamina(
+                   textStyle: const TextStyle(
+                     color: Colors.black,
+                     fontSize: 25
+                   )
+                 ), )),
+               )
               ],
             ),
           ),
