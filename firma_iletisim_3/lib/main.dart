@@ -63,7 +63,7 @@ class BenimUyg extends StatelessWidget {
                  height: 25,
                ),
                Card( 
-                 margin: EdgeInsets.symmetric(horizontal: 45),              
+                 margin: const EdgeInsets.symmetric(horizontal: 45),              
                  color: Colors.brown.shade100,
                  child: const Padding(
                    padding: EdgeInsets.all(8.0),
@@ -78,7 +78,7 @@ class BenimUyg extends StatelessWidget {
                  height: 15,
                ),
                Card(
-                 margin: EdgeInsets.symmetric(horizontal: 45),
+                 margin: const EdgeInsets.symmetric(horizontal: 45),
                  color: Colors.brown.shade100,
                  child: const Padding(
                    padding: EdgeInsets.all(8.0),
