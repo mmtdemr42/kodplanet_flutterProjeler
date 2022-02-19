@@ -1,0 +1,1 @@
+# kodplanet_flutterProjeler dosyası youtubede sayfası bulunan kodpplanetin oluşturmuş olduğu Flutter ile Sıfırdan Uygulama Geliştirme oynatma listesinde yer alan uygulamaların geliştirilmesi amacıyla oluşturulmuştur. 
